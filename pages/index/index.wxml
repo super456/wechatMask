@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <button type='primary' bindtap='showMask'>{{motto}}</button>
+  </view>
+</view>
+
+<view class="b1" hidden="{{flag}}">
+  <view class="b2">
+      <image src='../../images/test.jpg'/>
+  </view>
+  <view class="t_w">
+    <cover-view class="t_image" bindtap="closeMask">
+      <cover-image  src="../../images/qcm.png"></cover-image>
+    </cover-view>
+  </view>
+</view>
+
